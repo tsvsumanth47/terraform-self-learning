@@ -11,13 +11,15 @@ provider "aws" {
   region = "us-west-2"
   }
 
+
+
 resource "aws_instance" "allapps" {
     ami = "ami-07c5ecd8498c59db5"
     instance_type = "t2.small"
     key_name = "terraform"
     user_data = file("./install_jenkins.sh")
-  
 }
+
 
 output "jenkins_url" {
 
